@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Container, Content, Text, H1, H2, H3, Button, Card, CardItem, Body } from 'native-base';
 import { FlatList, TouchableOpacity, RefreshControl, Image } from 'react-native';
-import { Container, Content, Card, CardItem, Body, Text, Button } from 'native-base';
+import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
 import Loading from './Loading';
 import Error from './Error';
 import Header from './Header';
 import Spacer from './Spacer';
 
-const RecipeListing = ({
+const HighlightsListing = ({
   error,
   loading,
-  recipes,
+  highlights,
   reFetch,
 }) => {
   // Loading
@@ -22,23 +22,26 @@ const RecipeListing = ({
 
   const keyExtractor = item => item.id;
 
-  const onPress = item => Actions.recipe({ match: { params: { id: String(item.id) } } });
+  // const onPress = item => Actions.recipe({ match: { params: { id: String(item.id) } } });
 
   return (
     <Container>
       <Content padder>
-        <Header
-          title="Top News"
-          content="Notícias e novidades da Integer e da área de TI."
-        />
-
-        <FlatList
-          numColumns={2}
-          data={recipes}
+      <FlatList
+          numColumns={1}
+          data={highlights}
           renderItem={({ item }) => (
             <Card transparent style={{ paddingHorizontal: 6 }}>
               <CardItem cardBody>
-                <TouchableOpacity onPress={() => onPress(item)} style={{ flex: 1 }}>
+                <Body>
+                  <Spacer size={10} />
+                  <H1>{item.title}</H1>
+                  <Spacer size={15} />
+                  <Text>{item.body}</Text>
+                </Body>
+              </CardItem>
+              <CardItem cardBody>
+              <Spacer size={10} />
                   <Image
                     source={{ uri: item.image }}
                     style={{
@@ -48,23 +51,6 @@ const RecipeListing = ({
                       borderRadius: 5,
                     }}
                   />
-                </TouchableOpacity>
-              </CardItem>
-              <CardItem cardBody>
-                <Body>
-                  <Spacer size={10} />
-                  <Text style={{ fontWeight: '800' }}>{item.title}</Text>
-                  <Spacer size={15} />
-                  <Button
-                    block
-                    bordered
-                    small
-                    onPress={() => onPress(item)}
-                  >
-                    <Text>View Recipe</Text>
-                  </Button>
-                  <Spacer size={5} />
-                </Body>
               </CardItem>
             </Card>
           )}
@@ -75,24 +61,23 @@ const RecipeListing = ({
               onRefresh={reFetch}
             />
           }
-        />
-
-        <Spacer size={20} />
+        />  
+      
       </Content>
     </Container>
   );
 };
 
-RecipeListing.propTypes = {
+HighlightsListing.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
-  recipes: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  highlights: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   reFetch: PropTypes.func,
 };
 
-RecipeListing.defaultProps = {
+HighlightsListing.defaultProps = {
   error: null,
   reFetch: null,
 };
 
-export default RecipeListing;
+export default HighlightsListing;

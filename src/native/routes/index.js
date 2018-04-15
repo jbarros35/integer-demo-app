@@ -24,7 +24,11 @@ import UpdateProfileComponent from '../components/UpdateProfile';
 import MemberContainer from '../../containers/Member';
 import ProfileComponent from '../components/Profile';
 
-import AboutComponent from '../components/About';
+import HighlightsComponent from '../components/Highlights';
+import HighlightsContainer from '../../containers/Highlights';
+
+import JobsContainer from '../../containers/Jobs';
+import JobsComponent from '../components/Jobs';
 
 const Index = (
   <Stack>
@@ -37,23 +41,32 @@ const Index = (
         {...DefaultProps.tabProps}
       >
         <Stack
-          key="home"
+          key="highlights"
           title={AppConfig.appName.toUpperCase()}
-          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
+          icon={() => <Icon name="ios-home-outline" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="home" component={AboutComponent} />
+          <Scene key="highlights" component={HighlightsContainer} Layout={HighlightsComponent}/>
         </Stack>
 
         <Stack
           key="recipes"
-          title="RECIPES"
+          title="NOTCIAS"
           icon={() => <Icon name="book" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
           <Scene key="recipes" component={RecipesContainer} Layout={RecipesComponent} />
         </Stack>
 
+        <Stack
+          key="jobs"
+          title="JUMP IN"
+          icon={() => <Icon name="md-code-working" {...DefaultProps.icons} />}
+          {...DefaultProps.navbarProps}
+        >
+          <Scene key="recipes" component={JobsContainer} Layout={JobsComponent} />
+        </Stack>
+        
         <Stack
           key="profile"
           title="PROFILE"

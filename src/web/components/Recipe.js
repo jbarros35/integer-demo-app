@@ -51,13 +51,13 @@ const RecipeView = ({
       <Row>
         <Col sm="12">
           <h1>{recipe.title}</h1>
-          <p>by {recipe.author}</p>
+          <p>por {recipe.author}</p>
         </Col>
       </Row>
       <Row>
         <Col lg="4" className="recipe-view-card">
           <Card>
-            <CardHeader>About this recipe</CardHeader>
+            <CardHeader>Titulo noticia</CardHeader>
             <CardBody>
               <CardText>{recipe.body}</CardText>
             </CardBody>
@@ -65,7 +65,7 @@ const RecipeView = ({
         </Col>
         <Col lg="4" className="recipe-view-card">
           <Card>
-            <CardHeader>Ingredients</CardHeader>
+            <CardHeader>My 1 List</CardHeader>
             <ListGroup className="list-group-flush">
               {ingredients}
             </ListGroup>
@@ -73,7 +73,7 @@ const RecipeView = ({
         </Col>
         <Col lg="4" className="recipe-view-card">
           <Card>
-            <CardHeader>Method</CardHeader>
+            <CardHeader>My second List</CardHeader>
             <ListGroup className="list-group-flush">
               {method}
             </ListGroup>

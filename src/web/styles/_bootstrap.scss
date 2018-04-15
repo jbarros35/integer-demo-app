@@ -1,13 +1,13 @@
 // Override Bootstrap's variables before importing
 
 // Colors
-$purple: #473BE7;
-$primary: $purple;
+$white: #fd5c2bb9;
+$primary: $white;
 $body-bg: #ECF0F3;
 $body-color: #8D8E90;
 
 // Jumbotron
-$jumbotron-bg: white;
+$jumbotron-bg: rgb(255, 255, 255);
 
 // Misc
 $border-radius: 0;

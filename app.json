@@ -1,9 +1,12 @@
 {
   "expo": {
     "sdkVersion": "22.0.0",
-    "name": "React Native Starter Kit",
-    "slug": "react-native-starter-kit",
+    "name": "Integer Demo",
+    "slug": "integer-demo-app",
     "icon": "src/images/app-icon.png",
-    "privacy": "public"
+    "privacy": "public",
+    "ios": {
+      "bundleIdentifier": "www.integer.pt"
+    }
   }
 }

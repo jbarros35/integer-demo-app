@@ -12,7 +12,7 @@ const SidebarNavItems = () => (
     </NavItem>
     <NavItem>
       <Link className={`nav-link ${window.location.pathname.startsWith('/recipe') && 'active'}`} to="/recipes">
-        <i className="icon-notebook" /> <span>Recipes</span>
+        <i className="icon-notebook" /> <span>Notícias</span>
       </Link>
     </NavItem>
   </div>

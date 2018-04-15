@@ -20,6 +20,6 @@ export default {
   },
 
   icons: {
-    style: { color: 'white' },
+    style: { color: 'black' },
   },
 };
