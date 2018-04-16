@@ -37,6 +37,7 @@ export default function recipeReducer(state = initialState, action) {
           image: item.image,
           author: item.author,
           ingredients: item.ingredients,
+          topic: item.topic,
           method: item.method,
         }));
       }

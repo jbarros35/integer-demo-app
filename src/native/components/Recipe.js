@@ -24,18 +24,20 @@ const RecipeView = ({
   if (!recipe) return <Error content={ErrorMessages.recipe404} />;
 
   // Build Ingredients listing
-  const ingredients = recipe.ingredients.map(item => (
-    <ListItem key={item} rightIcon={{ style: { opacity: 0 } }}>
-      <Text>{item}</Text>
-    </ListItem>
-  ));
-
-  // Build Method listing
-  const method = recipe.method.map(item => (
-    <ListItem key={item} rightIcon={{ style: { opacity: 0 } }}>
-      <Text>{item}</Text>
-    </ListItem>
-  ));
+  const subtopic = (
+    <Card>
+          <CardItem header bordered>
+            <Text>{recipe.topic.title}</Text>
+          </CardItem>
+          <CardItem>
+            <Content>
+            <Body>
+              <Text>{recipe.topic.body}</Text>
+            </Body>
+            </Content>
+          </CardItem>
+        </Card>
+);
 
   return (
     <Container>
@@ -47,40 +49,7 @@ const RecipeView = ({
         <Text>by {recipe.author}</Text>
         <Spacer size={15} />
 
-        <Card>
-          <CardItem header bordered>
-            <Text>About this recipe</Text>
-          </CardItem>
-          <CardItem>
-            <Body>
-              <Text>{recipe.body}</Text>
-            </Body>
-          </CardItem>
-        </Card>
-
-        <Card>
-          <CardItem header bordered>
-            <Text>Ingredients</Text>
-          </CardItem>
-          <CardItem>
-            <Content>
-              <List>
-                {ingredients}
-              </List>
-            </Content>
-          </CardItem>
-        </Card>
-
-        <Card>
-          <CardItem header bordered>
-            <Text>Method</Text>
-          </CardItem>
-          <CardItem>
-            <List>
-              {method}
-            </List>
-          </CardItem>
-        </Card>
+        {subtopic}
 
         <Spacer size={20} />
       </Content>

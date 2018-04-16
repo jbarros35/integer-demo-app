@@ -55,8 +55,8 @@ class ForgotPassword extends React.Component {
       <Container>
         <Content padder>
           <Header
-            title="Reset your Password"
-            content="No stress, no stress. We'll get you back into your account."
+            title="Restaure tua Password"
+            content="Receberá um email com instruções para restaurar tua password."
           />
 
           {error && <Messages message={error} />}

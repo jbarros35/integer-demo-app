@@ -55,20 +55,20 @@ class SignUp extends React.Component {
       <Container>
         <Content padder>
           <Header
-            title="Welcome"
-            content="We're glad to welcome you to the community. There's only a few questions and you'll be on your way."
+            title="Bem vindo"
+            content="FAÇA parte da comunidade da Integer."
           />
 
           {error && <Messages message={error} />}
 
           <Form>
             <Item stackedLabel>
-              <Label>First Name</Label>
+              <Label>Nome</Label>
               <Input onChangeText={v => this.handleChange('firstName', v)} />
             </Item>
 
             <Item stackedLabel>
-              <Label>Last Name</Label>
+              <Label>Apelido</Label>
               <Input onChangeText={v => this.handleChange('lastName', v)} />
             </Item>
 
@@ -87,14 +87,14 @@ class SignUp extends React.Component {
             </Item>
 
             <Item stackedLabel>
-              <Label>Confirm Password</Label>
+              <Label>Confirma Password</Label>
               <Input secureTextEntry onChangeText={v => this.handleChange('password2', v)} />
             </Item>
 
             <Spacer size={20} />
 
             <Button block onPress={this.handleSubmit}>
-              <Text>Sign Up</Text>
+              <Text>Inscrever-se</Text>
             </Button>
           </Form>
         </Content>

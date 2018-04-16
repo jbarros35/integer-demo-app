@@ -13,7 +13,7 @@ const Profile = ({ member, logout }) => (
           <View>
             <Content padder>
               <Header
-                title={`Hi ${member.firstName},`}
+                title={`Olá ${member.firstName},`}
                 content={`You are currently logged in as ${member.email}`}
               />
             </Content>
@@ -39,8 +39,8 @@ const Profile = ({ member, logout }) => (
           <View>
             <Content padder>
               <Header
-                title="Hi there,"
-                content="Please login to gain extra access"
+                title="Olá,"
+                content="este é um acesso para colaboradores"
               />
             </Content>
 
@@ -57,7 +57,7 @@ const Profile = ({ member, logout }) => (
                 <Icon name="add-circle" />
               </Left>
               <Body>
-                <Text>Sign Up</Text>
+                <Text>Inscrever-se</Text>
               </Body>
             </ListItem>
             <ListItem onPress={Actions.forgotPassword} icon>
@@ -65,7 +65,7 @@ const Profile = ({ member, logout }) => (
                 <Icon name="help-buoy" />
               </Left>
               <Body>
-                <Text>Forgot Password</Text>
+                <Text>Esqueci meu password</Text>
               </Body>
             </ListItem>
           </View>

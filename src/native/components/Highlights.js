@@ -22,8 +22,6 @@ const HighlightsListing = ({
 
   const keyExtractor = item => item.id;
 
-  // const onPress = item => Actions.recipe({ match: { params: { id: String(item.id) } } });
-
   return (
     <Container>
       <Content padder>
@@ -32,15 +30,12 @@ const HighlightsListing = ({
           data={highlights}
           renderItem={({ item }) => (
             <Card transparent style={{ paddingHorizontal: 6 }}>
+            
               <CardItem cardBody>
                 <Body>
                   <Spacer size={10} />
                   <H1>{item.title}</H1>
-                  <Spacer size={15} />
-                  <Text>{item.body}</Text>
-                </Body>
-              </CardItem>
-              <CardItem cardBody>
+                  <CardItem cardBody>
               <Spacer size={10} />
                   <Image
                     source={{ uri: item.image }}
@@ -51,6 +46,10 @@ const HighlightsListing = ({
                       borderRadius: 5,
                     }}
                   />
+              </CardItem>
+                  <Spacer size={15} />
+                  <Text>{item.body}</Text>
+                </Body>
               </CardItem>
             </Card>
           )}

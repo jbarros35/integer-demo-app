@@ -51,13 +51,13 @@ const Index = (
 
         <Stack
           key="recipes"
-          title="NOTCIAS"
+          title="NOTÍCIAS"
           icon={() => <Icon name="book" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
           <Scene key="recipes" component={RecipesContainer} Layout={RecipesComponent} />
         </Stack>
-
+        {/*
         <Stack
           key="jobs"
           title="JUMP IN"
@@ -66,7 +66,7 @@ const Index = (
         >
           <Scene key="recipes" component={JobsContainer} Layout={JobsComponent} />
         </Stack>
-        
+        */}
         <Stack
           key="profile"
           title="PROFILE"
@@ -93,7 +93,7 @@ const Index = (
           <Scene
             back
             key="forgotPassword"
-            title="FORGOT PASSWORD"
+            title="RESTAURAR"
             {...DefaultProps.navbarProps}
             component={ForgotPasswordContainer}
             Layout={ForgotPasswordComponent}
@@ -101,7 +101,7 @@ const Index = (
           <Scene
             back
             key="updateProfile"
-            title="UPDATE PROFILE"
+            title="ATUALIZAR PERFIL"
             {...DefaultProps.navbarProps}
             component={UpdateProfileContainer}
             Layout={UpdateProfileComponent}
@@ -114,7 +114,7 @@ const Index = (
       back
       clone
       key="recipe"
-      title="RECIPE"
+      title="NOTICIA"
       {...DefaultProps.navbarProps}
       component={RecipesContainer}
       Layout={RecipeViewComponent}

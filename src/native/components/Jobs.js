@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import { Container, Header, Left, Body, Right, Title, Content, List, ListItem, Text, Icon, Spacer, Button, Label, Textarea, Form, Item, Input, Separator, Card, CardItem } from 'native-base';
-export default class HeaderTitleExample extends Component {
-  render() {
+import { Container, Left, Body, Right, Title, Content, List, ListItem, Text, Icon, Button, Label, Textarea, Form, Item, Input, Separator, Card, CardItem } from 'native-base';
+import PropTypes from 'prop-types';
+import { Actions } from 'react-native-router-flux';
+import Loading from './Loading';
+import Error from './Error';
+import Header from './Header';
+import Spacer from './Spacer';
+
+const JobsListing = ({
+  error
+}) => {
+
+    // Error
+    if (error) return <Error content={error} />;
+
     return (
       <Container>
-      <Header />
       <Content padder>
       <Card>
             <CardItem>
               <Body>
                 <Text>
-                   //Your text here
+                   //Faça parte de nossa equipa, venha trabalhar conosco.
                 </Text>
               </Body>
             </CardItem>
@@ -25,7 +36,7 @@ export default class HeaderTitleExample extends Component {
             <Input />
             <Icon name='mail' />
           </Item>
-          <Item floatingLabel >
+          <Item floatingLabel>
             <Label>Telefone</Label>
             <Input />
             <Icon name='ios-phone-portrait' />
@@ -48,5 +59,14 @@ export default class HeaderTitleExample extends Component {
       </Content>
     </Container>
     );
-  }
-}
+};
+
+JobsListing.propTypes = {
+  error: PropTypes.string,
+};
+
+JobsListing.defaultProps = {
+  error: null,
+};
+
+export default JobsListing;
